@@ -7,15 +7,19 @@
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
+    "babel-preset-flow": "^6.23.0",
+    "babel-preset-stage-0": "^6.24.1",
     "babel-register": "^6.26.0",
     "chai": "^4.1.2",
     "cross-env": "^5.1.1",
+    "flow-bin": "^0.59.0",
     "mocha": "^4.0.1",
     "nyc": "^11.3.0",
     "webpack": "^3.8.1"
   },
   "scripts": {
     "start": "webpack",
-    "test": "cross-env NODE_ENV=test nyc --reporter=lcov --reporter=text mocha --require babel-register --reporter spec || exit 0"
+    "test": "cross-env NODE_ENV=test mocha --require babel-register --reporter spec || exit 0",
+    "coverage": "cross-env NODE_ENV=test nyc --reporter=lcov --reporter=text mocha --require babel-register --reporter spec || exit 0"
   }
 }
